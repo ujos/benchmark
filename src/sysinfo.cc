@@ -65,6 +65,10 @@
 #include "sleep.h"
 #include "string_util.h"
 
+#ifdef _MSC_VER
+#   pragma comment(lib, "Shlwapi.lib")
+#endif //_MSC_VER
+
 namespace benchmark {
 namespace {
 

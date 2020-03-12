@@ -251,6 +251,14 @@ BENCHMARK(BM_test)->Unit(benchmark::kMillisecond);
 #define BENCHMARK_UNREACHABLE() ((void)0)
 #endif
 
+#ifdef _MSC_VER
+#   ifdef _DEBUG
+#       pragma comment (lib, "benchmarkd.lib")
+#   else // _DEBUG
+#       pragma comment (lib, "benchmark.lib")
+#   endif 
+#endif // _MSC_VER
+
 namespace benchmark {
 class BenchmarkReporter;
 class MemoryManager;
